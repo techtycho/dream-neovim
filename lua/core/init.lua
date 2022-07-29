@@ -1,0 +1,5 @@
+require "core.editor"
+require "core.plugins"
+require "core.ide"
+require "core.extra"
+require "core.theme"
