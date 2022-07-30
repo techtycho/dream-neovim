@@ -1,8 +1,6 @@
 local colors = require("core.theme.colors")
 
-local highlight = {
-  LineDiagnostic = { guibg = GetColorscheme("CursorColumn").background },
-}
+local highlight = {}
 
 for k, v in pairs(highlight) do
   colors.add_color(k, v, "#")

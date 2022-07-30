@@ -1,11 +1,12 @@
 local M = {}
+print("hello")
 
 -- Import GetColorscheme() so it can be used
 local GetColorscheme = require("core.theme.util").GetColorscheme
 
 -- Specifies how a line with diagnostics looks like depending on the severity and colorscheme
 local function getLineDiagnostic(severity)
-  local status_ok = GetColorscheme("DiagnosticVirtualTextError")[0] -- Check if the highlight group has a background color
+  local status_ok = GetColorscheme("DiagnosticVirtualTextError").background -- Check if the highlight group has a background color
   -- Highlights the line if the colorscheme supports that
   if status_ok then
     vim.cmd("highlight! LineDiagnostic" .. severity .. " guibg=#" .. GetColorscheme("DiagnosticVirtualText" .. severity).background) -- Set the highlight group

@@ -11,7 +11,7 @@ function GetColorscheme(hl_name)
   -- If the highlight group doesn't have a background color, return a table with the first value set to nil
   if not hl.background then
     return {
-      nil, -- No background color
+      background = nil, -- No background color
       foreground = hl.foreground and string.format("%06x", hl.foreground), -- Return foreground color as usual
     }
   end
