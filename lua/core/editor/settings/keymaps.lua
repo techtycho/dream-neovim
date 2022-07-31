@@ -23,7 +23,7 @@ keymap("n", "<C-Down>", ":resize -2<CR>", noremap)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", noremap)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", noremap)
 
-keymap("n", "<leader>e", ":Lex 30<cr>", noremap) -- Open Lexplore
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>", noremap)
 
 -- Clear Highlighting
 keymap("n", "<ESC><esc>", ":noh<cr>", noremap)
@@ -67,7 +67,8 @@ keymap("n", "<leader>f", "<cmd>lua << EOF\
   require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false,\
   borderchars = {' ',' ',' ',' ',' ',' ',' ',' '},\
   path_display = {'tail'},\
-  color_devicons = true}))\
+  color_devicons = true,\
+  winblend = 0}))\
 EOF<cr>", noremap)
 keymap("n", "<leader>tf", "<cmd>Telescope find_files<cr>", noremap)
 -- Live Grep

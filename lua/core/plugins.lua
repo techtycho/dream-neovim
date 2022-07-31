@@ -96,6 +96,8 @@ return packer.startup(function(use)
   -- Extra
   use "lukas-reineke/indent-blankline.nvim" -- Indent lines for readablity
   use "kyazdani42/nvim-web-devicons"
+  use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
+  use "kyazdani42/nvim-tree.lua"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

@@ -10,8 +10,10 @@ telescope.setup {
     -- source: https://www.nerdfonts.com/cheat-sheet
     prompt_prefix = "   ",
     selection_caret = "▕ ",
+    multi_icon = "▕ ",
     path_display = { "smart" },
     borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
+    winblend = 4,
 
     -- Keybindings
     mappings = {
