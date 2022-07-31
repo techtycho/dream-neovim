@@ -95,6 +95,7 @@ return packer.startup(function(use)
 
   -- Extra
   use "lukas-reineke/indent-blankline.nvim" -- Indent lines for readablity
+  use "kyazdani42/nvim-web-devicons"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

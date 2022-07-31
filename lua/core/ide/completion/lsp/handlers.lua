@@ -1,5 +1,4 @@
 local M = {}
-print("hello")
 
 -- Import GetColorscheme() so it can be used
 local GetColorscheme = require("core.theme.util").GetColorscheme

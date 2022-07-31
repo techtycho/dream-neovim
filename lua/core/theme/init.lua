@@ -1,6 +1,6 @@
 require "core.theme.util"
-require "core.theme.overwrite"
 require "core.theme.completion"
 require "core.theme.colors"
 require "core.theme.diagnostic"
 require "core.theme.telescope"
+require "core.theme.overwrite"

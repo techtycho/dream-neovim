@@ -6,6 +6,18 @@ local highlight = {
   DiagnosticVirtualTextHint  = { guifg = "#29a8bf", guibg = "#353e4f" },
   DiagnosticVirtualTextInfo  = { guifg = "#29a8bf", guibg = "#353e4f" },
   IndentBlanklineChar        = { guifg = colors.very_dark_gray },
+  TelescopeBorder            = { guibg = "#0d1318" },
+  TelescopeNormal            = { guibg = "#0b1015" },
+  TelescopeResultsBorder     = { guibg = "#0b1015" },
+  TelescopePromptBorder      = { guibg = "#11181c" },
+  TelescopePromptNormal      = { guibg = "#11181c" },
+  TelescopePreviewNormal     = { guibg = "#0d1318" },
+  TelescopePreviewBorder     = { guibg = "#0d1318" },
+  TelescopePreviewTitle      = { guifg = "#222222", guibg = "#" .. GetColorscheme("String").foreground },
+  TelescopePromptTitle       = { guifg = "#222222", guibg = "#" .. GetColorscheme("Special").foreground },
+  TelescopeResultsTitle      = { guifg = "#222222", guibg = "#" .. GetColorscheme("Function").foreground },
+  TelescopeSelection         = { guibg = "#1d232a" },
+  TelescopeMatching          = { cterm = "NONE", gui = "NONE" },
 }
 
 for k, v in pairs(highlight) do
