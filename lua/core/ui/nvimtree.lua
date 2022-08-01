@@ -14,17 +14,19 @@ local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup {
   renderer = {
+    root_folder_modifier = ":t:e",
     icons = {
+      git_placement = "signcolumn",
       glyphs = {
         default = "",
         symlink = "",
         git = {
-          unstaged = "",
-          staged = "",
+          unstaged = "▎",
+          staged = "▎",
           unmerged = "",
           renamed = "➜",
           deleted = "",
-          untracked = "",
+          untracked = "▎",
           ignored = "◌",
         },
         folder = {
@@ -68,7 +70,7 @@ nvim_tree.setup {
     timeout = 500,
   },
   view = {
-    width = 35,
+    width = 30,
     height = 30,
     hide_root_folder = false,
     side = "left",
