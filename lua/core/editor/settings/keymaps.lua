@@ -29,9 +29,10 @@ keymap("n", "<leader>e", ":NvimTreeToggle<cr>", noremap)
 keymap("n", "<ESC><esc>", ":noh<cr>", noremap)
 
 -- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", noremap)
 keymap("n", "<tab>", ":bnext<CR>", noremap) -- Preferred Keybinding
-keymap("n", "<S-h>", ":bprevious<CR>", noremap)
+
+keymap("n", "<S-l>", "2zl", remap)
+keymap("n", "<S-h>", "2zh", remap)
 
 -- Visual --
 -- Stay in indent mode when changing the level of indent
@@ -68,7 +69,7 @@ keymap("n", "<leader>f", "<cmd>lua << EOF\
   borderchars = {' ',' ',' ',' ',' ',' ',' ',' '},\
   path_display = {'tail'},\
   color_devicons = true,\
-  winblend = 0}))\
+  winblend = 2}))\
 EOF<cr>", noremap)
 keymap("n", "<leader>tf", "<cmd>Telescope find_files<cr>", noremap)
 -- Live Grep
@@ -81,3 +82,5 @@ keymap("v", "<leader>/", "gc", remap) -- Selection
 -- Git
 -- Show blame for current line
 keymap("n", "<leader>g", ":Gitsigns blame_line<CR>", noremap)
+
+keymap("n", "<leader>bd", ":Bdelete!<CR>", noremap)

@@ -22,10 +22,11 @@ end
 M.setup = function()
   -- Sign appearance settings
   local signs = {
-    { name = "DiagnosticSignError", text = "", line = "LineDiagnostic", severity = "Error" },
-    { name = "DiagnosticSignWarn",  text = "", line = "LineDiagnostic", severity = "Warn" },
-    { name = "DiagnosticSignHint",  text = "", line = "LineDiagnostic", severity = "Hint" },
-    { name = "DiagnosticSignInfo",  text = "", line = "LineDiagnostic", severity = "Info" },
+    -- This is also a good icon 
+    { name = "DiagnosticSignError", text = "~", line = "LineDiagnostic", severity = "Error" },
+    { name = "DiagnosticSignWarn",  text = "~", line = "LineDiagnostic", severity = "Warn" },
+    { name = "DiagnosticSignHint",  text = "~", line = "LineDiagnostic", severity = "Hint" },
+    { name = "DiagnosticSignInfo",  text = "~", line = "LineDiagnostic", severity = "Info" },
   }
 
   -- Define the signs based on the sign appearance settings

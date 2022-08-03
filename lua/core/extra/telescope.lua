@@ -13,7 +13,7 @@ telescope.setup {
     multi_icon = "▕ ",
     path_display = { "smart" },
     borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
-    winblend = 4,
+    winblend = 3,
 
     -- Keybindings
     mappings = {

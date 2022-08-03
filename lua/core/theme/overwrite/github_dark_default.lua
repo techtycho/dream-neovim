@@ -18,6 +18,10 @@ local highlight = {
   TelescopeResultsTitle      = { guifg = "#222222", guibg = "#" .. GetColorscheme("Function").foreground },
   TelescopeSelection         = { guibg = "#1d232a" },
   TelescopeMatching          = { cterm = "NONE", gui = "NONE" },
+  BufferLineFill             = { guibg = "#14181f" },
+  BufferLineBackground       = { guibg = "#14181f" },
+  BufferLineCloseButton      = { guibg = "#14181f" },
+  BufferLineSeparator        = { guifg = "#14181f", guibg = "#14181f" },
 }
 
 for k, v in pairs(highlight) do
