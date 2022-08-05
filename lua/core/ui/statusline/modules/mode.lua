@@ -1,4 +1,6 @@
 local M = {}
+local sep_style = require("core.ui.statusline.separators").styles.default
+local sep_r = sep_style[1]
 
 -- Modes and their names are Copied from Lualine, https://github.com/nvim-lualine/lualine.nvim/blob/master/lua/lualine/utils/mode.lua
 local modes = {
@@ -40,14 +42,14 @@ local modes = {
   ["t"]      = { "TERMINAL", "ST_ModeTerminal" },
 }
 
-vim.cmd("highlight! ST_ModeNormal guibg=#ff4242")
-vim.cmd("highlight! ST_ModeInsert guibg=#5555ff")
-vim.cmd("highlight! ST_Other      guibg=#1133a3")
+vim.cmd("highlight! ST_ModeNormal guibg=#1155a4")
+vim.cmd("highlight! ST_ModeNormalSep guibg=#" .. GetColorscheme("CursorColumn").background .. " guifg=#1155a4")
+vim.cmd("highlight! ST_OtherSep guibg=#" .. GetColorscheme("Normal").background .. " guifg=#" .. GetColorscheme("CursorColumn").background)
 
 function M.setup()
   local mode = vim.api.nvim_get_mode().mode
   local current_mode = modes[mode][1]
-  local fmt = "%#" .. modes[mode][2] .. "# " .. current_mode .. " %#ST_Other# %f %#Normal# %y%=%p%%"
+  local fmt = "%#" .. modes[mode][2] .. "#  " .. current_mode .. " %#" .. modes[mode][2] .. "Sep" .. "#" .. sep_r .. "%#ST_OtherSep#" .. sep_r .. " %#Normal#"
 
   return fmt
 end
