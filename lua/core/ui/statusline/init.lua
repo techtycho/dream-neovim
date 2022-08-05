@@ -14,16 +14,6 @@ function M.statusline()
   return M.getMode(vim.api.nvim_get_mode().mode)
 end
 
----- Old way of doing things ----
--- vim.api.nvim_exec([[
--- function! StatusLine()
---   let l:mode = mode()
---   let l:out = luaeval('require("core.ui.statusline").getMode(_A)', l:mode)
---   return l:out
--- endfunction
--- set statusline=%{StatusLine()}
--- ]], true)
-
-vim.opt.statusline = "%!v:lua.require('core.ui.statusline').hello()"
+vim.opt.statusline = "%!v:lua.require('core.ui.statusline').statusline()"
 
 return M
