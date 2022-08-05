@@ -48,9 +48,6 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
 
-  -- Other Plugins
-  use "mattn/emmet-vim" -- Emmet, for HTML
-
   -- Editor Features
   use "windwp/nvim-autopairs"
   -- Comments

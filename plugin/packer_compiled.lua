@@ -119,11 +119,6 @@ _G.packer_plugins = {
     path = "/home/tt/.local/share/nvim/site/pack/packer/start/darkplus.nvim",
     url = "https://github.com/LunarVim/darkplus.nvim"
   },
-  ["emmet-vim"] = {
-    loaded = true,
-    path = "/home/tt/.local/share/nvim/site/pack/packer/start/emmet-vim",
-    url = "https://github.com/mattn/emmet-vim"
-  },
   ["github-nvim-theme"] = {
     loaded = true,
     path = "/home/tt/.local/share/nvim/site/pack/packer/start/github-nvim-theme",

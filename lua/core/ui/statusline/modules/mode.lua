@@ -40,10 +40,16 @@ local modes = {
   ["t"]      = { "TERMINAL", "ST_ModeTerminal" },
 }
 
+vim.cmd("highlight! ST_ModeNormal guibg=#ff4242")
+vim.cmd("highlight! ST_ModeInsert guibg=#5555ff")
+vim.cmd("highlight! ST_Other      guibg=#1133a3")
+
 function M.setup()
   local mode = vim.api.nvim_get_mode().mode
   local current_mode = modes[mode][1]
-  return current_mode
+  local fmt = "%#" .. modes[mode][2] .. "# " .. current_mode .. " %#ST_Other# %f %#Normal# %y%=%p%%"
+
+  return fmt
 end
 
 return M
