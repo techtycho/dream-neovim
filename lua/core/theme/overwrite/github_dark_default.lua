@@ -34,4 +34,3 @@ end
 colors.update_colors()
 
 -- Statusline
-;
