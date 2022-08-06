@@ -42,20 +42,6 @@ local modes = {
   ["t"]      = { "TERMINAL", "ST_ModeTerminal" },
 }
 
-vim.cmd("highlight! ST_ModeNormal guibg=#1155a4")
-vim.cmd("highlight! ST_ModeInsert guibg=#a45511")
-vim.cmd("highlight! ST_ModeVisual guibg=#55a411")
-vim.cmd("highlight! ST_ModeCommand guibg=#35a471")
-vim.cmd("highlight! ST_ModeSelect guibg=#87901f")
-vim.cmd("highlight! ST_ModeReplace guibg=#cf2513")
-vim.cmd("highlight! ST_ModeNormalSep guibg=#" .. GetColorscheme("CursorColumn").background .. " guifg=#1155a4")
-vim.cmd("highlight! ST_ModeInsertSep guibg=#" .. GetColorscheme("CursorColumn").background .. " guifg=#a45511")
-vim.cmd("highlight! ST_ModeVisualSep guibg=#" .. GetColorscheme("CursorColumn").background .. " guifg=#55a411")
-vim.cmd("highlight! ST_ModeCommandSep guibg=#" .. GetColorscheme("CursorColumn").background .. " guifg=#35a471")
-vim.cmd("highlight! ST_ModeSelectSep guibg=#" .. GetColorscheme("CursorColumn").background .. " guifg=#87901f")
-vim.cmd("highlight! ST_ModeReplaceSep guibg=#" .. GetColorscheme("CursorColumn").background .. " guifg=#cf2513")
-vim.cmd("highlight! ST_OtherSep guibg=#" .. GetColorscheme("Normal").background .. " guifg=#" .. GetColorscheme("CursorColumn").background)
-
 function M.setup()
   local mode = vim.api.nvim_get_mode().mode
   local current_mode = modes[mode][1]

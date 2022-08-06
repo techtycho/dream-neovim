@@ -22,6 +22,8 @@ local highlight = {
   BufferLineBackground       = { guibg = "#14181f" },
   BufferLineCloseButton      = { guibg = "#14181f" },
   BufferLineCloseButtonSelected =  { guibg = "#0d1117" },
+  BufferLineModified         = { guibg = "#14181f" },
+  BufferLineModifiedSelected = { guibg = "#0d1117" },
   BufferLineSeparator        = { guifg = "#14181f", guibg = "#14181f" },
 }
 
@@ -30,3 +32,6 @@ for k, v in pairs(highlight) do
 end
 
 colors.update_colors()
+
+-- Statusline
+
