@@ -34,15 +34,24 @@ end
 
 colors.update_colors()
 
--- Statusline
-local modes = {}
-local modes_fg = {
-  all = statusline.opts.dark
+-- Statusline --
+-- Mode Colors
+local modes = {
+  normal = "#d55948",
+  insert = "#ba6b27",
+  visual = "#a254ba",
+  select = "#61afef",
+  replace = "#ec5445",
 }
 
 for k, v in pairs(modes) do
   statusline.modes[k] = v
 end
+
+-- Mode Foreground
+local modes_fg = {
+  all = statusline.opts.dark
+}
 
 for k, v in pairs(modes_fg) do
   statusline.modes_fg[k] = v
