@@ -36,9 +36,16 @@ colors.update_colors()
 
 -- Statusline
 local modes = {}
+local modes_fg = {
+  all = statusline.opts.dark
+}
 
 for k, v in pairs(modes) do
   statusline.modes[k] = v
+end
+
+for k, v in pairs(modes_fg) do
+  statusline.modes_fg[k] = v
 end
 
 statusline.update_colors()
