@@ -1,4 +1,5 @@
 local colors = require("core.theme.colors")
+local statusline = require("core.theme.statusline")
 
 local highlight = {
   DiagnosticVirtualTextError = { guifg = "#bf4454", guibg = "#3f2d35" },
@@ -34,3 +35,10 @@ end
 colors.update_colors()
 
 -- Statusline
+local modes = {}
+
+for k, v in pairs(modes) do
+  statusline.modes[k] = v
+end
+
+statusline.update_colors()
