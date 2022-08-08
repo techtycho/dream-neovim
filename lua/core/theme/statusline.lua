@@ -64,6 +64,7 @@ function M.update_colors()
     ["ST_OtherSep"] = { guibg = M.filename, guifg = "#" .. M.mode_sep_color },
     -- Filename --
     ["ST_Filename"] = { guibg = M.filename, guifg = M.filename_fg },
+    ["ST_FilenameSep"] = { guibg = "#" .. GetColorscheme("Normal").background, guifg = M.filename }
   }
 
   for k, v in pairs(highlight) do
