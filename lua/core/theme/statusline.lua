@@ -21,6 +21,9 @@ M.modes_fg = {
   all = M.opts.light,
 }
 
+M.filename = "#292a37"
+M.filename_fg = "#8c93a0"
+
 local function getFg(fg)
   if fg == M.opts.light then
     return "#" .. GetColorscheme("Normal").foreground
@@ -58,7 +61,9 @@ function M.update_colors()
     ["ST_ModeReplaceSep"]  = { guibg = "#" .. M.mode_sep_color, guifg = M.modes.replace },
     ["ST_ModeTerminalSep"] = { guibg = "#" .. M.mode_sep_color, guifg = M.modes.terminal },
     -- Other Separators --
-    ["ST_OtherSep"] = { guibg = "#" .. GetColorscheme("Normal").background, guifg = "#" .. GetColorscheme("CursorColumn").background },
+    ["ST_OtherSep"] = { guibg = M.filename, guifg = "#" .. M.mode_sep_color },
+    -- Filename --
+    ["ST_Filename"] = { guibg = M.filename, guifg = M.filename_fg },
   }
 
   for k, v in pairs(highlight) do
