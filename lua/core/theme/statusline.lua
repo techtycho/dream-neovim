@@ -8,7 +8,7 @@ M.opts = {
 
 M.normal = "#13161d"
 M.normal_fg = "#8c93a0"
-M.mode_sep_color = GetColorscheme("CursorColumn").background
+M.mode_sep_color = "#292a37"
 M.modes = {
   normal = "#1155a4",
   insert = "#a45511",
@@ -21,7 +21,7 @@ M.modes = {
 M.modes_fg = {
   all = M.opts.light,
 }
-M.filename = "#292a37"
+M.filename = "#1c1d2b"
 M.filename_fg = "#afb6c4"
 
 local function getFg(fg)
@@ -53,15 +53,15 @@ function M.update_colors()
     ["ST_ModeReplace"]  = { guibg = M.modes.replace,  guifg = getFg(replace_fg) },
     ["ST_ModeTerminal"] = { guibg = M.modes.terminal, guifg = getFg(terminal_fg) },
     -- Mode Separators --
-    ["ST_ModeNormalSep"]   = { guibg = "#" .. M.mode_sep_color, guifg = M.modes.normal },
-    ["ST_ModeInsertSep"]   = { guibg = "#" .. M.mode_sep_color, guifg = M.modes.insert },
-    ["ST_ModeVisualSep"]   = { guibg = "#" .. M.mode_sep_color, guifg = M.modes.visual },
-    ["ST_ModeCommandSep"]  = { guibg = "#" .. M.mode_sep_color, guifg = M.modes.command },
-    ["ST_ModeSelectSep"]   = { guibg = "#" .. M.mode_sep_color, guifg = M.modes.select },
-    ["ST_ModeReplaceSep"]  = { guibg = "#" .. M.mode_sep_color, guifg = M.modes.replace },
-    ["ST_ModeTerminalSep"] = { guibg = "#" .. M.mode_sep_color, guifg = M.modes.terminal },
+    ["ST_ModeNormalSep"]   = { guibg = M.mode_sep_color, guifg = M.modes.normal },
+    ["ST_ModeInsertSep"]   = { guibg = M.mode_sep_color, guifg = M.modes.insert },
+    ["ST_ModeVisualSep"]   = { guibg = M.mode_sep_color, guifg = M.modes.visual },
+    ["ST_ModeCommandSep"]  = { guibg = M.mode_sep_color, guifg = M.modes.command },
+    ["ST_ModeSelectSep"]   = { guibg = M.mode_sep_color, guifg = M.modes.select },
+    ["ST_ModeReplaceSep"]  = { guibg = M.mode_sep_color, guifg = M.modes.replace },
+    ["ST_ModeTerminalSep"] = { guibg = M.mode_sep_color, guifg = M.modes.terminal },
     -- Other Separators --
-    ["ST_OtherSep"] = { guibg = M.filename, guifg = "#" .. M.mode_sep_color },
+    ["ST_OtherSep"] = { guibg = M.filename, guifg = M.mode_sep_color },
     -- Filename --
     ["ST_Filename"] = { guibg = M.filename, guifg = M.filename_fg },
     ["ST_FilenameSep"] = { guibg = M.normal, guifg = M.filename },
