@@ -6,6 +6,8 @@ M.opts = {
   dark = 2,
 }
 
+M.normal = "#13161d"
+M.normal_fg = "#8c93a0"
 M.mode_sep_color = GetColorscheme("CursorColumn").background
 M.modes = {
   normal = "#1155a4",
@@ -16,13 +18,11 @@ M.modes = {
   replace = "#cf2513",
   terminal = "#159d4f",
 }
-
 M.modes_fg = {
   all = M.opts.light,
 }
-
 M.filename = "#292a37"
-M.filename_fg = "#8c93a0"
+M.filename_fg = "#afb6c4"
 
 local function getFg(fg)
   if fg == M.opts.light then
@@ -64,7 +64,9 @@ function M.update_colors()
     ["ST_OtherSep"] = { guibg = M.filename, guifg = "#" .. M.mode_sep_color },
     -- Filename --
     ["ST_Filename"] = { guibg = M.filename, guifg = M.filename_fg },
-    ["ST_FilenameSep"] = { guibg = "#" .. GetColorscheme("Normal").background, guifg = M.filename }
+    ["ST_FilenameSep"] = { guibg = M.normal, guifg = M.filename },
+    -- Git --
+    ["ST_Normal"] = { guibg = M.normal, guifg = M.normal_fg },
   }
 
   for k, v in pairs(highlight) do

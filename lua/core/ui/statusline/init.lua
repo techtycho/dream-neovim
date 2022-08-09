@@ -5,6 +5,7 @@ function M.statusline()
   return table.concat {
     module.mode(),
     module.filename(),
+    module.git(),
   }
 end
 

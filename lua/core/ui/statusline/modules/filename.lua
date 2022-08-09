@@ -1,4 +1,6 @@
 local M = {}
+
+local icons = require("core.ui.icons")
 local sep_style = require("core.ui.statusline.separators").styles.default
 local sep_r = sep_style[1]
 
@@ -14,7 +16,14 @@ function M.setup()
     end
   end
 
-  local fmt = "%#ST_Filename#" .. icon .. " " .. filename .. " %#ST_FilenameSep#" .. sep_r .. "%#Normal#"
+  for k, v in pairs(icons.special) do
+    if filename == k then
+      icon = v[1]
+      filename = v[2]
+    end
+  end
+
+  local fmt = "%#ST_Filename#" .. icon .. " " .. filename .. " %#ST_FilenameSep#" .. sep_r .. "%#ST_Normal#"
 
   return fmt
 end
