@@ -8,12 +8,14 @@ function M.setup()
   local icon = ""
   local filename = vim.fn.expand("%:t")
 
-  if filename ~= "Empty " then
+  if filename ~= "" then
     local status_ok, devicons = pcall(require, "nvim-web-devicons")
     if status_ok then
       local devicon = devicons.get_icon(filename)
       icon = (devicon ~= nil and devicon) or icon
     end
+  else
+    filename = "[No Name]"
   end
 
   for k, v in pairs(icons.special) do
