@@ -6,7 +6,7 @@ if not status_ok then
 end
 
 M.special = {
-  ["NvimTree_1"] = { "פּ", "Explorer" }
+  ["NvimTree_1"] = { "פּ", "Explorer" },
 }
 
 devicons.set_icon {

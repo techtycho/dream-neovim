@@ -3,7 +3,7 @@ return {
   settings = {
     Lua = {
       diagnostics = {
-        globals = { "vim" }, -- Mark vim as a default global, so it does not complain about vim not being declared
+        globals = { "vim", "awesome" }, -- Mark vim as a default global, so it does not complain about vim not being declared
       },
       workspace = {
         library = {
