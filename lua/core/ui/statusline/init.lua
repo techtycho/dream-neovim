@@ -6,6 +6,10 @@ function M.statusline()
     module.mode(),
     module.filename(),
     module.git(),
+
+    "%=",
+
+    module.diagnostics(),
   }
 end
 
