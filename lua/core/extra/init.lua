@@ -1,1 +1,1 @@
-require "core.extra.telescope"
+--require "core.extra.telescope"
