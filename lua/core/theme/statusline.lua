@@ -89,7 +89,7 @@ function M.update_colors()
     -- User
     ["ST_UserSep"] = { guifg = M.user_icon, guibg = M.filename },
     ["ST_UserIcon"] = { guifg = M.normal, guibg = M.user_icon },
-    ["ST_User"] = { guifg = M.filename_fg, guibg = M.filename },
+    ["ST_User"] = { guifg = M.user_icon, guibg = M.filename },
   }
 
   for k, v in pairs(highlight) do
