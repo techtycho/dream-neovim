@@ -10,6 +10,7 @@ function M.statusline()
     "%=",
 
     module.diagnostics(),
+    module.stats(),
     module.filetype(),
     module.cwd(),
     module.user(),

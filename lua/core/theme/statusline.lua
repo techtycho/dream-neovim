@@ -80,8 +80,8 @@ function M.update_colors()
     -- Diagnostics
     ["ST_Error"] = { guifg = M.error, guibg = M.normal },
     ["ST_Warn"]  = { guifg = M.warn, guibg = M.normal },
-    ["ST_Hint"]  = { guifg = M.hint, guibg = M.normal },
-    ["ST_Info"]  = { guifg = M.info, guibg = M.normal },
+    ["ST_Hint"]  = { guifg = M.normal_fg, guibg = M.normal },
+    ["ST_Info"]  = { guifg = M.normal_fg, guibg = M.normal },
     -- Filetype
     ["ST_FiletypeSep"] = { guifg = M.filetype_icon, guibg = M.normal },
     ["ST_FiletypeIcon"] = { guifg = M.normal, guibg = M.filetype_icon },

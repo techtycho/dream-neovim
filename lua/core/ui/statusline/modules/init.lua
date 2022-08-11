@@ -7,5 +7,6 @@ M.diagnostics = require("core.ui.statusline.modules.diagnostics").setup
 M.filetype = require("core.ui.statusline.modules.filetype").setup
 M.cwd = require("core.ui.statusline.modules.cwd").setup
 M.user = require("core.ui.statusline.modules.user").setup
+M.stats = require("core.ui.statusline.modules.stats").setup
 
 return M
