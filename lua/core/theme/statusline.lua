@@ -23,6 +23,11 @@ M.modes_fg = {
 }
 M.filename = "#1c1d2b"
 M.filename_fg = "#afb6c4"
+M.error = "#" .. GetColorscheme("DiagnosticError").foreground
+M.warn = "#" .. GetColorscheme("DiagnosticWarn").foreground
+M.hint = "#" .. GetColorscheme("DiagnosticHint").foreground
+M.info = "#" .. GetColorscheme("DiagnosticInfo").foreground
+M.cwd_icon = "#cf433a"
 
 local function getFg(fg)
   if fg == M.opts.light then
@@ -65,8 +70,16 @@ function M.update_colors()
     -- Filename --
     ["ST_Filename"] = { guibg = M.filename, guifg = M.filename_fg },
     ["ST_FilenameSep"] = { guibg = M.normal, guifg = M.filename },
-    -- Git --
+    -- Normal --
     ["ST_Normal"] = { guibg = M.normal, guifg = M.normal_fg },
+    -- CWD
+    ["ST_CwdSep"] = { guibg = M.normal, guifg = M.cwd_icon },
+    ["ST_CwdIcon"] = { guibg = M.cwd_icon, guifg = M.normal },
+    -- Diagnostics
+    ["ST_Error"] = { guifg = M.error, guibg = M.normal },
+    ["ST_Warn"]  = { guifg = M.warn, guibg = M.normal },
+    ["ST_Hint"] = { guifg = M.hint, guibg = M.normal },
+    ["ST_Info"] = { guifg = M.info, guibg = M.normal },
   }
 
   for k, v in pairs(highlight) do
