@@ -1,5 +1,4 @@
 local M = {}
-
 local sep_style = require("core.ui.statusline.separators").styles.default
 local sep_l = sep_style[2]
 

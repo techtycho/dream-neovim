@@ -28,6 +28,7 @@ M.warn = "#" .. GetColorscheme("DiagnosticWarn").foreground
 M.hint = "#" .. GetColorscheme("DiagnosticHint").foreground
 M.info = "#" .. GetColorscheme("DiagnosticInfo").foreground
 M.cwd_icon = "#cf433a"
+M.filetype_icon = "#c58f37"
 
 local function getFg(fg)
   if fg == M.opts.light then
@@ -73,13 +74,17 @@ function M.update_colors()
     -- Normal --
     ["ST_Normal"] = { guibg = M.normal, guifg = M.normal_fg },
     -- CWD
-    ["ST_CwdSep"] = { guibg = M.normal, guifg = M.cwd_icon },
+    ["ST_CwdSep"] = { guibg = M.filename, guifg = M.cwd_icon },
     ["ST_CwdIcon"] = { guibg = M.cwd_icon, guifg = M.normal },
     -- Diagnostics
     ["ST_Error"] = { guifg = M.error, guibg = M.normal },
     ["ST_Warn"]  = { guifg = M.warn, guibg = M.normal },
-    ["ST_Hint"] = { guifg = M.hint, guibg = M.normal },
-    ["ST_Info"] = { guifg = M.info, guibg = M.normal },
+    ["ST_Hint"]  = { guifg = M.hint, guibg = M.normal },
+    ["ST_Info"]  = { guifg = M.info, guibg = M.normal },
+    -- Filetype
+    ["ST_FiletypeSep"] = { guifg = M.filetype_icon, guibg = M.normal },
+    ["ST_FiletypeIcon"] = { guifg = M.normal, guibg = M.filetype_icon },
+    ["ST_Filetype"] = { guifg = M.filename_fg, guibg = M.filename },
   }
 
   for k, v in pairs(highlight) do
