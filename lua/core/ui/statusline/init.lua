@@ -12,6 +12,7 @@ function M.statusline()
     module.diagnostics(),
     module.filetype(),
     module.cwd(),
+    module.user(),
   }
 end
 

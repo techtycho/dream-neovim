@@ -7,7 +7,8 @@ function M.setup()
   local filename = vim.fn.expand("%:t")
 
   if filename ~= "NvimTree_1" and filename ~= "" then
-    local icon
+    local icon = ""
+    local filetype = (vim.bo.filetype ~= "" and vim.bo.filetype) or filename
 
     local status_ok, devicons = pcall(require, "nvim-web-devicons")
     if status_ok then
@@ -15,7 +16,7 @@ function M.setup()
       icon = (devicon ~= nil and devicon) or icon
     end
 
-    local fmt = "%#ST_FiletypeSep#" .. sep_l .. "%#ST_FiletypeIcon#" .. icon .. " %#ST_Filetype# " .. vim.bo.filetype .. " "
+    local fmt = "%#ST_FiletypeSep#" .. sep_l .. "%#ST_FiletypeIcon#" .. icon .. " %#ST_Filetype# " .. filetype .. " "
     return fmt
   end
 

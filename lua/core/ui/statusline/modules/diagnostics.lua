@@ -16,7 +16,7 @@ function M.setup()
   local hints_fmt = (hints and hints > 0) and ("%#ST_Hint# ﯧ " .. hints .. " ") or ""
   local info_fmt = (info and info > 0) and ("%#ST_Info#  " .. info .. " ") or ""
 
-  local fmt = errors_fmt .. warnings_fmt .. hints_fmt .. info_fmt .. "%#ST_Normal#"
+  local fmt = errors_fmt .. warnings_fmt .. hints_fmt .. info_fmt .. "%#ST_Normal# "
 
   return fmt
 end

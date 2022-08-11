@@ -29,6 +29,7 @@ M.hint = "#" .. GetColorscheme("DiagnosticHint").foreground
 M.info = "#" .. GetColorscheme("DiagnosticInfo").foreground
 M.cwd_icon = "#cf433a"
 M.filetype_icon = "#c58f37"
+M.user_icon = "#35a352"
 
 local function getFg(fg)
   if fg == M.opts.light then
@@ -85,6 +86,10 @@ function M.update_colors()
     ["ST_FiletypeSep"] = { guifg = M.filetype_icon, guibg = M.normal },
     ["ST_FiletypeIcon"] = { guifg = M.normal, guibg = M.filetype_icon },
     ["ST_Filetype"] = { guifg = M.filename_fg, guibg = M.filename },
+    -- User
+    ["ST_UserSep"] = { guifg = M.user_icon, guibg = M.filename },
+    ["ST_UserIcon"] = { guifg = M.normal, guibg = M.user_icon },
+    ["ST_User"] = { guifg = M.filename_fg, guibg = M.filename },
   }
 
   for k, v in pairs(highlight) do
