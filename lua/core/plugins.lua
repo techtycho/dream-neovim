@@ -51,15 +51,13 @@
     -- Editor Features
     use "windwp/nvim-autopairs"
     -- Comments
-    --use "numToStr/Comment.nvim"
-    --use "JoosepAlviste/nvim-ts-context-commentstring"
+    use { "numToStr/Comment.nvim", after = "nvim-treesitter" }
+    use { "JoosepAlviste/nvim-ts-context-commentstring", after = "Comment.nvim", config = function ()
+      require("core.editor.features.comments")
+    end }
 
     -- Colorschemes
-    use "navarasu/onedark.nvim" -- Onedark
-    use "olimorris/onedarkpro.nvim" -- OneDarkPro
     use "projekt0n/github-nvim-theme" -- GitHub Theme
-    use "catppuccin/nvim" -- Catppuccin
-    use "LunarVim/darkplus.nvim" -- VSCode Dark+ (Default)
 
     -- Completion plugins
     use "hrsh7th/nvim-cmp"
@@ -74,8 +72,12 @@
     use "L3MON4D3/LuaSnip" -- Snippet engine
 
     -- LSP
-    use "neovim/nvim-lspconfig"
-    use "williamboman/nvim-lsp-installer"
+    use { "neovim/nvim-lspconfig", event = "InsertEnter", config = function ()
+      require("core.ide.completion.lsp")
+    end }
+    use { "williamboman/nvim-lsp-installer", after = "nvim-lspconfig", config = function ()
+      require("core.ide.completion.lsp.lsp-installer")
+    end }
     -- Telescope
     use { "nvim-telescope/telescope.nvim",
       cmd = "Telescope",
@@ -86,8 +88,19 @@
     -- Treesitter, powerful syntax highlighting
     use {
       "nvim-treesitter/nvim-treesitter",
+      module = "nvim-treesitter",
+      setup = function ()
+        require("core.lazyload").on_file_open("nvim-treesitter")
+      end,
+      cmd = {
+        "TSInstall",
+        "TSBufEnable",
+        "TSBufDisable",
+        "TSEnable",
+        "TSDisable",
+        "TSModuleInfo",
+      },
       run = ":TSUpdate",
-      event = "BufEnter",
       config = function ()
         require("core.ide.treesitter")
         require("core.ide.completion")
@@ -96,12 +109,14 @@
     -- Git
     use "lewis6991/gitsigns.nvim" -- GitSigns, like GitLens in VSCode, some features are disabled by default
     -- Extra
-    use { "lukas-reineke/indent-blankline.nvim", event = "BufEnter" } -- Indent lines for readablity
+    use { "lukas-reineke/indent-blankline.nvim", opt = true, setup = function ()
+      require("core.lazyload").on_file_open("indent-blankline.nvim")
+    end } -- Indent lines for readablity
     use "kyazdani42/nvim-web-devicons"
     use { "akinsho/bufferline.nvim", tag = "v2.*" }
     use { "moll/vim-bbye", cmd = "Bdelete" }
     use { "kyazdani42/nvim-tree.lua",
-      cmd = "NvimTreeToggle",
+      cmd = { "NvimTreeToggle", "NvimTreeFocus" },
       config = function ()
         require("core.ui.nvimtree")
       end,

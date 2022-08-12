@@ -3,7 +3,7 @@ _G.colorscheme = "github_dark_default" -- Default is `darkplus`
 
 -- Theme Configurations --
 -- Catppuccin
-vim.g.catppuccin_flavour = "mocha"
+--vim.g.catppuccin_flavour = "mocha"
 -- Onedark
 -- require('onedark').setup {
 --   style = 'dark', -- Style is set to dark
