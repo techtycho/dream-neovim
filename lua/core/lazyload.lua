@@ -36,4 +36,16 @@ M.on_file_open = function(plugin)
   }
 end
 
+M.gitsigns = function()
+  autocmd({ "BufRead" }, {
+    callback = function()
+      if vim.fn.isdirectory(".git") ~= 0 then
+        vim.schedule(function()
+          require("packer").loader("gitsigns.nvim")
+        end)
+      end
+    end,
+  })
+end
+
 return M

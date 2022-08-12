@@ -23,11 +23,11 @@ nvim_tree.setup {
         git = {
           unstaged = "▎",
           staged = "▎",
-          unmerged = "",
-          renamed = "➜",
-          deleted = "",
+          unmerged = "▎",
+          renamed = "▎",
+          deleted = "▎",
           untracked = "▎",
-          ignored = "◌",
+          ignored = "▎",
         },
         folder = {
           default = "",

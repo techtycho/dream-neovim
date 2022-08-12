@@ -8,6 +8,6 @@ local supported_colorschemes = {
 for _, i in ipairs(supported_colorschemes) do
   if colorscheme == i then
     require("core.theme.overwrite." .. colorscheme)
-    require("core.ide.completion.lsp.handlers").setup()
+    -- require("core.ide.completion.lsp.handlers").setup()
   end
 end

@@ -45,11 +45,12 @@
     use "wbthomason/packer.nvim" -- Have packer manage itself
 
     -- Plugins as dependencies
-    use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
-    use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
+    use { "nvim-lua/plenary.nvim", module = "plenary" } -- Useful lua functions used by lots of plugins
 
     -- Editor Features
-    use "windwp/nvim-autopairs"
+    use { "windwp/nvim-autopairs", after = "nvim-cmp", config = function ()
+      require "core.editor.features.autopairs"
+    end }
     -- Comments
     use { "numToStr/Comment.nvim", after = "nvim-treesitter" }
     use { "JoosepAlviste/nvim-ts-context-commentstring", after = "Comment.nvim", config = function ()
@@ -57,24 +58,36 @@
     end }
 
     -- Colorschemes
-    use "projekt0n/github-nvim-theme" -- GitHub Theme
+    use "projekt0n/github-nvim-theme"  -- GitHub Theme
 
     -- Completion plugins
-    use "hrsh7th/nvim-cmp"
-    use "hrsh7th/cmp-buffer" -- Buffer completions
-    use "hrsh7th/cmp-path" -- Path completions
-    use "hrsh7th/cmp-cmdline" -- Cmdline completions
-    use "saadparwaiz1/cmp_luasnip" -- Snippet completions
-    use "hrsh7th/cmp-nvim-lsp" -- Completion for LSP
-    use "hrsh7th/cmp-nvim-lua" -- Lua completion
+    use { "hrsh7th/nvim-cmp",
+      module = { "cmp", "cmp_nvim_lsp" },
+      event = "InsertEnter",
+    }
+    use { "hrsh7th/cmp-buffer", after = "cmp-nvim-lsp" } -- Buffer completions
+    use { "hrsh7th/cmp-path", after = "cmp-buffer" } -- Path completions
+    use { "saadparwaiz1/cmp_luasnip", after = "LuaSnip" } -- Snippet completions
+    use { "hrsh7th/cmp-nvim-lsp", after = "cmp-nvim-lua" } -- Completion for LSP
+    use { "hrsh7th/cmp-nvim-lua", after = "cmp_luasnip" } -- Lua completion
 
     -- Snippets
-    use "L3MON4D3/LuaSnip" -- Snippet engine
+    use { "L3MON4D3/LuaSnip", after = "nvim-cmp",
+      config = function ()
+        require("core.ide.completion.completion")
+      end,
+    } -- Snippet engine
 
     -- LSP
-    use { "neovim/nvim-lspconfig", event = "InsertEnter", config = function ()
-      require("core.ide.completion.lsp")
-    end }
+    use { "neovim/nvim-lspconfig",
+      opt = true,
+      setup = function ()
+        require("core.lazyload").on_file_open("nvim-lspconfig")
+      end,
+      config = function ()
+        require("core.ide.completion.lsp")
+      end,
+    }
     use { "williamboman/nvim-lsp-installer", after = "nvim-lspconfig", config = function ()
       require("core.ide.completion.lsp.lsp-installer")
     end }
@@ -83,8 +96,9 @@
       cmd = "Telescope",
       module = "telescope.builtin",
       config = function ()
-      require "core.extra.telescope"
-    end }
+        require "core.extra.telescope"
+      end
+    }
     -- Treesitter, powerful syntax highlighting
     use {
       "nvim-treesitter/nvim-treesitter",
@@ -103,11 +117,18 @@
       run = ":TSUpdate",
       config = function ()
         require("core.ide.treesitter")
-        require("core.ide.completion")
       end
     }
     -- Git
-    use "lewis6991/gitsigns.nvim" -- GitSigns, like GitLens in VSCode, some features are disabled by default
+    use {
+      "lewis6991/gitsigns.nvim",
+      setup = function ()
+        require("core.lazyload").gitsigns()
+      end,
+      config = function ()
+        require("core.ide.git")
+      end
+    } -- GitSigns, like GitLens in VSCode, some features are disabled by default
     -- Extra
     use { "lukas-reineke/indent-blankline.nvim", opt = true, setup = function ()
       require("core.lazyload").on_file_open("indent-blankline.nvim")
@@ -121,6 +142,7 @@
         require("core.ui.nvimtree")
       end,
     }
+    use { "lewis6991/impatient.nvim", module = "impatient" }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

@@ -4,5 +4,4 @@ if not status_ok then
 	return
 end
 
---require("core.ide.completion.lsp.lsp-installer")
 require("core.ide.completion.lsp.handlers").setup() -- Handler for diagnostics
