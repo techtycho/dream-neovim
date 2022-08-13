@@ -9,8 +9,8 @@ telescope.setup {
   defaults = {
     -- source: https://www.nerdfonts.com/cheat-sheet
     prompt_prefix = "   ",
-    selection_caret = "▕ ",
-    multi_icon = "▕ ",
+    selection_caret = "▎ ",
+    multi_icon = "▎ ",
     path_display = { "smart" },
     borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
     winblend = 3,

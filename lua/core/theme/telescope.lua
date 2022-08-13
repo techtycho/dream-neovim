@@ -8,10 +8,11 @@ local highlight = {
   TelescopePromptNormal = { guibg="#333333" },
   TelescopePreviewNormal = { guibg="#1D1D1D" },
   TelescopePreviewBorder = { guibg="#1D1D1D" },
-  TelescopePreviewTitle = { guifg="#222222", guibg="#" .. GetColorscheme("String").foreground },
-  TelescopePromptTitle = { guifg="#222222", guibg="#" .. GetColorscheme("Special").foreground },
-  TelescopeResultsTitle = { guifg="#222222", guibg="#" .. GetColorscheme("Function").foreground },
-  TelescopeSelection = { guibg="#333333" },
+  TelescopePreviewTitle = { guifg="#222222", guibg = "#" .. GetColorscheme("String").foreground },
+  TelescopePromptTitle = { guifg="#222222", guibg = "#" .. GetColorscheme("Special").foreground },
+  TelescopeResultsTitle = { guifg="#222222", guibg = "#" .. GetColorscheme("Function").foreground },
+  TelescopeSelection = { guibg = "#333333" },
+  TelescopeSelectionCaret = { guifg = "#" .. GetColorscheme("Special").foreground, guibg = "#222222" },
 }
 
 for k, v in pairs(highlight) do
