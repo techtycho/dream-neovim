@@ -143,6 +143,7 @@
       end,
     }
     use { "lewis6991/impatient.nvim", module = "impatient" }
+    use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

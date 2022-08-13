@@ -1,7 +1,7 @@
 -- Mapping Options
-local noremap   = { noremap = true,  silent = true }
-local remap     = { noremap = false, silent = true }
-local term_opts = { silent  = true }
+local noremap = { noremap = true, silent = true }
+local remap = { noremap = false, silent = true }
+local term_opts = { silent = true }
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
@@ -64,13 +64,18 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Telescope
 -- Find Files
-keymap("n", "<leader>f", "<cmd>lua << EOF\
+keymap(
+	"n",
+	"<leader>f",
+	"<cmd>lua << EOF\
   require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false,\
   borderchars = {' ',' ',' ',' ',' ',' ',' ',' '},\
   path_display = {'tail'},\
   color_devicons = true,\
   winblend = 2}))\
-EOF<cr>", noremap)
+EOF<cr>",
+	noremap
+)
 keymap("n", "<leader>tf", "<cmd>Telescope find_files<cr>", noremap)
 -- Live Grep
 keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", noremap)
@@ -84,3 +89,4 @@ keymap("v", "<leader>/", "gc", remap) -- Selection
 keymap("n", "<leader>g", ":Gitsigns blame_line<CR>", noremap)
 
 keymap("n", "<leader>bd", ":Bdelete!<CR>", noremap)
+keymap("n", "<C-s>", ":Format<CR>", noremap)

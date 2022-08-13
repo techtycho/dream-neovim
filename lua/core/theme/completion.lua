@@ -14,7 +14,5 @@ local kind_colors = {
 colors.highlight["CmpItemAbbrMatch"] = { guifg = colors.blue, guibg = "NONE", cterm = "NONE", gui = "NONE" } -- Matching abbr
 
 for k, v in pairs(kind_colors) do
-  colors.highlight[k] = { guifg = "#" .. v  }
+  colors.highlight["CmpItemKind" .. k] = { guifg = "#" .. v  }
 end
-
-colors.update_colors()
