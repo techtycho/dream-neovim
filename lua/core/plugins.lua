@@ -59,6 +59,7 @@
 
     -- Colorschemes
     use "projekt0n/github-nvim-theme"  -- GitHub Theme
+    use "LunarVim/darkplus.nvim"
 
     -- Completion plugins
     use { "hrsh7th/nvim-cmp",
@@ -144,6 +145,7 @@
     }
     use { "lewis6991/impatient.nvim", module = "impatient" }
     use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+    use "akinsho/toggleterm.nvim"
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
