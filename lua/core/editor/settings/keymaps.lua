@@ -90,3 +90,6 @@ keymap("n", "<leader>g", ":Gitsigns blame_line<CR>", noremap)
 
 keymap("n", "<leader>bd", ":Bdelete!<CR>", noremap)
 keymap("n", "<C-s>", ":Format<CR>", noremap)
+
+-- Terminal
+keymap("n", "<leader>tr", ":lua require('toggleterm.terminal').Terminal:new():toggle()<CR>", noremap)

@@ -4,3 +4,5 @@ require "core.extra"
 require "core.ide"
 require "core.theme"
 require "core.ui"
+
+require("impatient")

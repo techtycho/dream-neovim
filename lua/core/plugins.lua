@@ -143,9 +143,10 @@
         require("core.ui.nvimtree")
       end,
     }
-    use { "lewis6991/impatient.nvim", module = "impatient" }
+    use "lewis6991/impatient.nvim"
     use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
     use "akinsho/toggleterm.nvim"
+    use "glepnir/dashboard-nvim"
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
