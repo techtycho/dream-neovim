@@ -5,4 +5,4 @@ require "core.ide"
 require "core.theme"
 require "core.ui"
 
-require("impatient")
+require "impatient"

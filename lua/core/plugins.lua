@@ -60,6 +60,7 @@
     -- Colorschemes
     use "projekt0n/github-nvim-theme"  -- GitHub Theme
     use "LunarVim/darkplus.nvim"
+    use "bluz71/vim-moonfly-colors"
 
     -- Completion plugins
     use { "hrsh7th/nvim-cmp",
@@ -147,6 +148,8 @@
     use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
     use "akinsho/toggleterm.nvim"
     use "glepnir/dashboard-nvim"
+
+    use "techtycho/moonline"
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
