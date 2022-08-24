@@ -6,3 +6,6 @@ require "core.theme"
 require "core.ui"
 
 require "impatient"
+
+-- Statusline
+require "moonline"
