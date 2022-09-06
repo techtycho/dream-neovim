@@ -1,2 +1,5 @@
 plugin/
+
+# files for testing
 lua/moonline
+lua/core/ui/term.lua
