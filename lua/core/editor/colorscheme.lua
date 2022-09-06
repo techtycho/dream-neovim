@@ -5,12 +5,12 @@ _G.colorscheme = "github_dark_default" -- Default is `darkplus`
 -- Catppuccin
 vim.g.catppuccin_flavour = "mocha"
 -- Onedark
-local ok, onedark = pcall(require, "onedark")
-if ok then
-  onedark.setup {
-    style = "dark", -- Style is set to dark
-  }
-end
+-- local ok, onedark = pcall(require, "onedark")
+-- if ok then
+--   onedark.setup {
+--     style = "dark", -- Style is set to dark
+--   }
+-- end
 -- require("onedark").load()
 
 -- Set the colorscheme and handle possible exceptions

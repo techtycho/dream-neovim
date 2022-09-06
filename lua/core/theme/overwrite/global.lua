@@ -14,6 +14,7 @@ local highlight = {
   TSTitle                  =   { cterm = "NONE", gui = "NONE" },
   BufferLineBufferSelected =   { cterm = "NONE", gui = "NONE" },
   NvimTreeVertSplit        =   { guibg = "#" .. GetColorscheme("NvimTreeNormal").background, guifg = "#" .. GetColorscheme("NvimTreeNormal").background },
+  NvimTreeWinSeparator     =   { guibg = "#" .. GetColorscheme("NvimTreeNormal").background, guifg = "#" .. GetColorscheme("NvimTreeNormal").background },
   NvimTreeRootFolder       =   { gui = "NONE", cterm = "NONE" },
   NvimTreeCursorLine       =   { guibg = "#" .. GetColorscheme("Normal").background },
 }

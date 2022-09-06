@@ -14,7 +14,7 @@ local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup {
   renderer = {
-    root_folder_modifier = ":t:e",
+    root_folder_modifier = ":p:.",
     icons = {
       git_placement = "signcolumn",
       glyphs = {

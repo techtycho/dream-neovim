@@ -4,12 +4,10 @@ local remap = { noremap = false, silent = true }
 local term_opts = { silent = true }
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
-
 -- Remap space as leader key
 keymap("", "<Space>", "<Nop>", noremap)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-
 -- Normal --
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", noremap)
@@ -80,8 +78,19 @@ keymap("n", "<leader>tf", "<cmd>Telescope find_files<cr>", noremap)
 -- Live Grep
 keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", noremap)
 
+-- Make comments easier to work with
+function _G.getComment()
+  local line = vim.api.nvim_get_current_line()
+  if (line == "") then
+    vim.cmd "normal gcA"
+    vim.cmd "startinsert!"
+  else
+    vim.cmd "normal gcc"
+  end
+end
+
 -- Comment
-keymap("n", "<leader>/", "gcc", remap) -- Current Line
+keymap("n", "<leader>/", ":lua _G.getComment()<CR>", remap) -- Current Line
 keymap("v", "<leader>/", "gc", remap) -- Selection
 
 -- Git
